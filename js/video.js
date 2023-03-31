@@ -5,18 +5,21 @@ window.addEventListener("load", function() {
 
 });
 
+// play, update volume
 document.querySelector("#play").addEventListener("click", function() {
 	document.querySelector('#volume').innerHTML = '100%';
  	console.log("Play Video");
 	video.play();
  });
 
+//  pause video
  document.querySelector("#pause").addEventListener("click", function() {
 	console.log("Pause Video");
    video.pause();
    console.log(video.currentTime);
 });
 
+// slow down
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Old Video Speed is " + video.playbackRate);
    video.playbackRate = video.playbackRate * 0.95;
@@ -24,6 +27,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 
 });
 
+// speed up
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Old Video Speed is " + video.playbackRate);
    video.playbackRate = video.playbackRate * 1.05;
@@ -31,7 +35,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 });
 
-
+// skip ahead
 document.querySelector("#skip").addEventListener("click", function() {
 	if (video.currentTime <= video.duration) {
 	 skip = (time) => video.currentTime=video.currentTime + time;
@@ -46,7 +50,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 
    });
 
-
+// mute
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted === false) {    
 	 video.muted = true;
@@ -60,7 +64,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 
    });
 
-
+// volume slider
 var volumeControl = document.getElementById('slider');
    volumeControl.addEventListener('change',function(e){
 	   video.volume = e.currentTarget.value / 100;
@@ -68,13 +72,15 @@ var volumeControl = document.getElementById('slider');
    });
 
 
+// old school style
 var oldschoolBtn = document.getElementById('vintage');
    oldschoolBtn.addEventListener('click', function() {
-	video.className = "oldSchool";
+    video.className = "oldSchool";
    });
    
+// original
 var originalBtn = document.getElementById('orig');
    originalBtn.addEventListener('click', function() {
-	if (video.classList.contains("oldSchool"))
-	 video.classList.remove("oldSchool");
+    if (video.classList.contains("oldSchool"))
+     video.classList.remove("oldSchool");
    });
