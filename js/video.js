@@ -22,7 +22,7 @@ document.querySelector("#play").addEventListener("click", function() {
 // slow down
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Old Video Speed is " + video.playbackRate);
-   video.playbackRate = video.playbackRate * 0.95;
+   video.playbackRate = video.playbackRate * 0.9;
    console.log("New Video Speed is " + video.playbackRate);
 
 });
@@ -30,7 +30,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 // speed up
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Old Video Speed is " + video.playbackRate);
-   video.playbackRate = video.playbackRate * 1.05;
+   video.playbackRate = video.playbackRate * 1.1;
    console.log("New Video Speed is " + video.playbackRate);
 
 });
@@ -39,7 +39,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#skip").addEventListener("click", function() {
 	if (video.currentTime <= video.duration) {
 	 skip = (time) => video.currentTime=video.currentTime + time;
-	 skip(15);
+	 skip(10);
 	 console.log(video.currentTime)
 	} 
 	 
